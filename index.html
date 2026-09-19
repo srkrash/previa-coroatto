@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_tab" name="shell-type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        background-color: #131313;
+        color: #e5e2e1;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      .pb-safe {
+        padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
+      }
+      .pt-safe {
+        padding-top: max(env(safe-area-inset-top, 0px), 12px);
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#131313",
+            "on-primary": "#4e2509",
+            "on-secondary-container": "#ff9a88",
+            "secondary-fixed-dim": "#ffb4a6",
+            "surface-container-high": "#2a2a2a",
+            "surface-container-lowest": "#0e0e0e",
+            "tertiary-container": "#a7a199",
+            "on-tertiary-fixed": "#1e1b16",
+            "error": "#ffb4ab",
+            "surface-bright": "#393939",
+            "on-secondary-fixed-variant": "#881f10",
+            "inverse-on-surface": "#313030",
+            "surface-container": "#201f1f",
+            "tertiary": "#ccc6bd",
+            "on-primary-container": "#582d10",
+            "surface-variant": "#353534",
+            "tertiary-fixed": "#e8e1d9",
+            "inverse-primary": "#855232",
+            "tertiary-fixed-dim": "#ccc6bd",
+            "on-error": "#690005",
+            "primary-fixed": "#ffdbc9",
+            "surface-container-highest": "#353534",
+            "outline": "#9f8d84",
+            "on-surface": "#e5e2e1",
+            "background": "#131313",
+            "on-primary-fixed": "#321200",
+            "on-surface-variant": "#d6c3b9",
+            "surface-dim": "#131313",
+            "error-container": "#93000a",
+            "secondary-container": "#881f10",
+            "on-error-container": "#ffdad6",
+            "surface-tint": "#fcb790",
+            "on-secondary-fixed": "#400200",
+            "secondary-fixed": "#ffdad4",
+            "on-tertiary-fixed-variant": "#4a4640",
+            "surface-container-low": "#1c1b1b",
+            "on-tertiary": "#33302a",
+            "primary-container": "#d3946f",
+            "on-background": "#e5e2e1",
+            "outline-variant": "#52443d",
+            "on-tertiary-container": "#3b3832",
+            "primary": "#fcb790",
+            "inverse-surface": "#e5e2e1",
+            "primary-fixed-dim": "#fcb790",
+            "secondary": "#ffb4a6",
+            "on-secondary": "#670600",
+            "on-primary-fixed-variant": "#693b1d"
+          },
+          fontFamily: {
+            "headline": ["Playfair Display", "serif"],
+            "body": ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col antialiased selection:bg-primary selection:text-on-primary">
+<!-- Fixed Luxury Header (QR Code Informative Menu) -->
+<header class="fixed top-0 w-full z-50 pt-safe bg-surface/95 backdrop-blur-xl border-b border-surface-container-highest/60 shadow-[0_4px_24px_rgba(0,0,0,0.6)]">
+<div class="px-5 py-3 flex items-center justify-between">
+<!-- Logo + Ambient Details -->
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center p-1 border border-primary/20 shadow-inner">
+<img alt="Coroatto Gastronomia" class="h-full w-full object-contain filter invert opacity-95" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5QS9ucsUwSr62Sb2__GoCT7i8KeLSKMc9HLN4zI4Jp87ljr2i5Jx6pBlphKX27aHdYXEtrG7lRfHUD7XwTSGuigaaltaL0WKKyz6EioVYif66KxKj7uhW5I4K4zzPZHCKFN5uAOvASU8nVUKCDnwh_gZJ9_cC_xNzOTI4FJCDqMUH6YLOdnaDibQMIhTcEwIzjnqrBZdLok4c6WrbtoTIlFQCgRJ7OD6gRCjVp1468Bq3h8Kzzt_OPcH9SI7zDbvZTQ"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline font-semibold text-lg tracking-wide text-primary leading-tight">Coroatto</span>
+<span class="text-[10px] text-tertiary tracking-widest uppercase font-mono">1988</span>
+</div>
+<span class="text-[11px] text-on-surface-variant/80 tracking-wider uppercase flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary/70"></span>
+            Salão Principal &amp; Terraço
+          </span>
+</div>
+</div>
+<!-- Quick Info / Language & WiFi Badges -->
+<div class="flex items-center gap-2">
+<div class="hidden xs:flex flex-col text-right">
+<span class="text-[10px] uppercase tracking-widest text-primary font-medium">QR Cardápio</span>
+<span class="text-[10px] text-on-surface-variant font-mono">Consulte a Equipe</span>
+</div>
+<div class="h-8 px-2.5 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">qr_code_scanner</span>
+<span class="text-[11px] font-semibold text-on-surface tracking-wider">LEITURA</span>
+</div>
+</div>
+</div>
+<!-- Category Sliding Rail (Horizontal Sticky Navigation) -->
+<nav class="overflow-x-auto no-scrollbar py-2.5 px-4 flex items-center gap-2 border-t border-surface-container-high/40 bg-surface-container-lowest/80">
+<a class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-primary text-on-primary transition-all shadow-sm" href="#menu-almoco">
+        ★ Almoço Especial
+      </a>
+<a class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-surface-container text-on-surface-variant hover:text-primary transition-all" href="#saladas">
+        Saladas
+      </a>
+<a class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-surface-container text-on-surface-variant hover:text-primary transition-all" href="#entradas">
+        Entradas
+      </a>
+<a class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-surface-container text-on-surface-variant hover:text-primary transition-all" href="#executivos">
+        Executivos
+      </a>
+<a class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-surface-container text-on-surface-variant hover:text-primary transition-all" href="#a-la-carte">
+        À La Carte
+      </a>
+<a class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-surface-container text-on-surface-variant hover:text-primary transition-all" href="#risotos">
+        Risotos
+      </a>
+<a class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-surface-container text-on-surface-variant hover:text-primary transition-all" href="#massas">
+        Massas
+      </a>
+<a class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-surface-container text-on-surface-variant hover:text-primary transition-all" href="#porcoes">
+        Porções
+      </a>
+<a class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-surface-container text-on-surface-variant hover:text-primary transition-all" href="#sobremesas">
+        Sobremesas
+      </a>
+<a class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-surface-container text-on-surface-variant hover:text-primary transition-all" href="#drinks">
+        Drinks
+      </a>
+<a class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-surface-container text-on-surface-variant hover:text-primary transition-all" href="#vinhos">
+        Vinhos
+      </a>
+<a class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-surface-container text-on-surface-variant hover:text-primary transition-all" href="#bebidas">
+        Bebidas
+      </a>
+</nav>
+</header>
+<!-- Main Content Body -->
+<main class="flex flex-col relative w-full pt-[128px] pb-24 px-4 max-w-2xl mx-auto space-y-10">
+<!-- Cardápio Informativo Notice & Welcome -->
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-b from-surface-container-high/90 to-surface-container p-5 border border-primary/20 shadow-xl mt-2">
+<div class="absolute -right-12 -top-12 w-44 h-44 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-lg">auto_stories</span>
+<span class="text-[11px] font-bold uppercase tracking-widest">Cardápio de Degustação &amp; Consulta</span>
+</div>
+<h1 class="font-headline text-2xl sm:text-3xl text-on-surface font-semibold leading-snug">
+        A Essência da Culinária Italiana Autoral
+      </h1>
+<p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+        Este cardápio é estritamente informativo para visualização na sua mesa. Nossos garçons e sommelier terão imenso prazer em atender aos seus pedidos presencialmente.
+      </p>
+<div class="mt-4 pt-3 border-t border-surface-variant/50 flex items-center justify-between text-[11px] text-tertiary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">schedule</span> Cozinha até 23h30</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">info</span> Taxa de serviço 10% opcional</span>
+</div>
+</div>
+<!-- ============================================== -->
+<!-- 1. MENU ALMOÇO "TRÊS SENSAÇÕES" -->
+<!-- ============================================== -->
+<section class="scroll-mt-36 space-y-4" id="menu-almoco">
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-bold uppercase tracking-widest text-primary">Destaque Exclusivo</span>
+<span class="text-[11px] font-semibold text-on-primary bg-primary px-2.5 py-0.5 rounded-full">Segunda a Sexta</span>
+</div>
+<h2 class="font-headline text-2xl text-on-surface font-bold mt-0.5">Menu Almoço "Três Sensações"</h2>
+<p class="text-xs text-on-surface-variant mt-0.5">Experiência completa em 3 tempos (Entrada + Prato Principal + Sobremesa)</p>
+</div>
+<!-- Feature Card 3 Tempos -->
+<div class="rounded-2xl bg-surface-container-low border border-primary/30 p-5 shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 px-4 py-1.5 rounded-bl-xl bg-primary text-on-primary font-headline text-sm font-bold shadow-md">
+          R$ 89 <span class="text-[10px] font-normal tracking-tight font-body">/ pessoa</span>
+</div>
+<div class="pr-20">
+<span class="text-xs uppercase tracking-widest text-primary font-semibold">12h às 15h30</span>
+<h3 class="font-headline text-xl text-on-surface font-semibold mt-1">Harmonia dos Três Tempos</h3>
+<p class="text-xs text-on-surface-variant mt-1">Escolha uma opção de cada tempo para compor seu almoço:</p>
+</div>
+<div class="mt-5 space-y-3.5 text-xs">
+<!-- 1º Tempo -->
+<div class="p-3 rounded-xl bg-surface-container border border-surface-container-highest/60">
+<span class="font-bold text-primary uppercase text-[11px] tracking-wider block mb-1">1º Tempo • Entrada (à escolha)</span>
+<ul class="space-y-1 text-on-surface-variant list-disc list-inside">
+<li><strong class="text-on-surface">Carpaccio Clássico (120g)</strong> com rúcula e parmesão reggiano</li>
+<li><strong class="text-on-surface">Mini Insalata Caprese (140g)</strong> com pesto genovês de manjericão</li>
+<li><strong class="text-on-surface">Zuppa di Pomodoro Rústica (160g)</strong> com focaccia quentinha</li>
+</ul>
+</div>
+<!-- 2º Tempo -->
+<div class="p-3 rounded-xl bg-surface-container border border-surface-container-highest/60">
+<span class="font-bold text-primary uppercase text-[11px] tracking-wider block mb-1">2º Tempo • Prato Principal (à escolha)</span>
+<ul class="space-y-1 text-on-surface-variant list-disc list-inside">
+<li><strong class="text-on-surface">Scaloppine di Filetto ao Marsala (340g)</strong> com purê trufado</li>
+<li><strong class="text-on-surface">Gnocchi artesanal ao Pomodoro &amp; Burrata (320g)</strong> gratinado</li>
+<li><strong class="text-on-surface">Filetto di Tilápia em Crosta de Ervas (330g)</strong> com risoto de limão</li>
+</ul>
+</div>
+<!-- 3º Tempo -->
+<div class="p-3 rounded-xl bg-surface-container border border-surface-container-highest/60">
+<span class="font-bold text-primary uppercase text-[11px] tracking-wider block mb-1">3º Tempo • Sobremesa (à escolha)</span>
+<ul class="space-y-1 text-on-surface-variant list-disc list-inside">
+<li><strong class="text-on-surface">Pequeno Tiramisù da Casa (110g)</strong> café illy e mascarpone</li>
+<li><strong class="text-on-surface">Panna Cotta ao Coulis de Amoras Silvestres (110g)</strong></li>
+<li><strong class="text-on-surface">Sorbet Artesanal de Limão Siciliano (100g)</strong></li>
+</ul>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-variant/40 flex items-center justify-between text-[11px] text-tertiary">
+<span>* Não acumulativo com outras promoções</span>
+<span class="text-primary font-medium">Bebidas servidas à parte</span>
+</div>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- 2. SALADAS -->
+<!-- ============================================== -->
+<section class="scroll-mt-36 space-y-4" id="saladas">
+<div class="flex flex-col">
+<span class="text-[11px] font-bold uppercase tracking-widest text-primary">Le Insalate</span>
+<h2 class="font-headline text-2xl text-on-surface font-bold">Saladas Frescas</h2>
+<p class="text-xs text-on-surface-variant">Folhas nobres, molhos delicados e azeites extravirgens selecionados.</p>
+</div>
+<div class="grid grid-cols-1 gap-3.5">
+<!-- Salada Caprese -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-secondary-container text-on-secondary-container">Vegetariano</span>
+</div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Insalata Caprese di Bufala</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Mussarela de búfala artesanal fresca, tomates caqui e cereja marinados, pesto de manjericão e redução balsâmica de Modena.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 58</span>
+<span class="text-xs font-mono text-tertiary">280g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Caprese salad with buffalo mozzarella and cherry tomatoes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASg5SnZCo3chsW-2KBIo1u8-VO8YLql-ulrbhCMpsTsrF7YwpieBFY-qPi36X4HCc1JmMVZetSpPp8YgFrgjJHnUhnjwr8TujNwZPenNkvFvBqiimWcGhuP1tosPvVvxIo76c4zFsScfEoyiBZuH1WJxVLos4Sdv3J0WpYCw-sllj5-hjv8yZfRIVcyJdcIU_Z7QxDHrVm-saLRQXe15DqljKuhiwAx0LoicNyxgFAlP8qWB9LeXoe"/>
+</div>
+</article>
+<!-- Salada Caesar Coroatto -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Salada Caesar Coroatto</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Mix de alface romana crocante, tiras de peito de frango grelhado na brasa, lascas de Grana Padano 24 meses e croutons rústicos de focaccia ao alecrim.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 54</span>
+<span class="text-xs font-mono text-tertiary">320g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Italian caesar salad with roasted focaccia croutons and shaved parmesan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQEMn-5bwyD_rCvdPo0AIiPOSFEOKobkbApPLNwtdOaK5T7rRvsDsnM5Fv1_XBOdv5yTuIE1U-4RKbOlfbUnGg_4l1a5PvTRcWOVJ2ocjtNy64Xz7YL4EZx7VgsZlVFc6s-0JFLZnuTN5k-ifm6HK6dN29mD_lrJITJ4L4DYXoRv47-N-xKhU3MlHlzOLObL-gi3EHe-x2wqIrXzTMrpv-r_IjvLPcdSKofHVJg4YUd_mnzMJfabGR"/>
+</div>
+</article>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- 3. ENTRADAS -->
+<!-- ============================================== -->
+<section class="scroll-mt-36 space-y-4" id="entradas">
+<div class="flex flex-col">
+<span class="text-[11px] font-bold uppercase tracking-widest text-primary">Inizio Elegante</span>
+<h2 class="font-headline text-2xl text-on-surface font-bold">Entradas &amp; Antepastos</h2>
+<p class="text-xs text-on-surface-variant">Pratos autorais para iniciar a noite à meia-luz.</p>
+</div>
+<div class="grid grid-cols-1 gap-3.5">
+<!-- Carpaccio -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-surface-container-highest text-primary">Clássico Coroatto</span>
+</div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Carpaccio di Manzo Trufado</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Fatias finíssimas de filé mignon cru, emulsão de azeite trufado de San Miniato, alcaparras crocantes e lâminas maturadas de Grana Padano.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 68</span>
+<span class="text-xs font-mono text-tertiary">180g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Beef carpaccio with truffle oil and micro herbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkg_XX3YSiqfGnlBLKKiDdQyuiNfUCJMVyzng3GT0wi_aSGwrUVc7EqK9A20CWlbMbCF7trTr208l-z2_lIKquat9Mx6inAC0u63oqJhXarCw6iLX29nOQz-sLKMuxw9pKq_wBrKp-RSK3Vhh4s14vXgmUgPyKosHdgYcHKjHwMlVKf-_LHj0qhJCAc25r53xqPi0Q_OPVNqlcyx1zVbozWRzbwE-8A5yzBdgQJFr4U99cZHk8TYXC"/>
+</div>
+</article>
+<!-- Burrata ao Forno -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-secondary-container text-on-secondary-container">Vegetariano</span>
+</div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Burrata ao Forno a Lenha</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Burrata inteira aquecida em massa folhada leve, servida sobre redução de tomates confitados no alecrim e pesto rústico de pistache.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 74</span>
+<span class="text-xs font-mono text-tertiary">300g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Wood oven baked burrata with confit cherry tomatoes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASg5SnZCo3chsW-2KBIo1u8-VO8YLql-ulrbhCMpsTsrF7YwpieBFY-qPi36X4HCc1JmMVZetSpPp8YgFrgjJHnUhnjwr8TujNwZPenNkvFvBqiimWcGhuP1tosPvVvxIo76c4zFsScfEoyiBZuH1WJxVLos4Sdv3J0WpYCw-sllj5-hjv8yZfRIVcyJdcIU_Z7QxDHrVm-saLRQXe15DqljKuhiwAx0LoicNyxgFAlP8qWB9LeXoe"/>
+</div>
+</article>
+<!-- Bruschettas de Cogumelos -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Bruschettas de Cogumelos &amp; Gorgonzola</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Pão de fermentação natural grelhado, cogumelos paris e shimeji salteados na manteiga de tomilho, creme aveludado de gorgonzola dolce.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 52</span>
+<span class="text-xs font-mono text-tertiary">220g (3 unidades)</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Bruschetta with wild mushrooms and melted cheese" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmCxgGOsrKKxD8tFKSP4WUtNjtFdjxiCp4K3LGf8L8j8WoU_U8DR18cTx-PQAQcXIKpxL3eaUo6I6eZNzXRtgluKL6r-wamZcG1vzfjsR_VAuXcMffFsG19ad5oJUYmYSP6Mm19IxQYrBf5ucIfDfrFZvuEQz77pzFZ0slZNV7BWESmQ_zfzq3BYR5qgnZ-npRiQ2-UCuDv8vIlwuuP_LkwySridqImov3Uc_z0n55DbdsCeBqvGVG"/>
+</div>
+</article>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- 4. PRATOS EXECUTIVOS -->
+<!-- ============================================== -->
+<section class="scroll-mt-36 space-y-4" id="executivos">
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-bold uppercase tracking-widest text-primary">Segunda a Sexta</span>
+<span class="text-[11px] text-tertiary">12h às 16h</span>
+</div>
+<h2 class="font-headline text-2xl text-on-surface font-bold">Pratos Executivos</h2>
+<p class="text-xs text-on-surface-variant">Pratos balanceados com o toque artesanal da nossa cozinha.</p>
+</div>
+<div class="grid grid-cols-1 gap-3.5">
+<!-- Filé Mignon ao Roti -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Filé Mignon ao Molho Roti &amp; Mousseline</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Medalhão de mignon grelhado na manteiga clarificada, glacê clássico de carne perfumado com vinho do Porto e mousseline sedosa de batatas.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 72</span>
+<span class="text-xs font-mono text-tertiary">380g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Beef tenderloin with demi glace and potato mousseline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4R8luPj9tZ-5PtMnT76j1shLvuCcy8tfj3l0ph9ZsdL8qZAB2b-JVUPRaCtW3-37yzxqtSXvfJ_6fzr3cV3NdbysM1eA_yLDlqX3A1ytkCxUtT-7pjbnbxkh8ywlmRh4-72g9fMpx8b0wnDtiNmjLOmc4p34wTgsU9wOZ1JvLaIf5ZCCR2HnwS0L6bqpGlZzBT9zBmfnggKf282jEOErn38ew9u0SVxPWXtAoMpAaRr9k2hAvYEz1"/>
+</div>
+</article>
+<!-- Peixe Branco Grelhado -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Peixe Branco com Legumes Salteados</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Robalo fresco selado no azeite de ervas com legumes da horta (aspargos, mini cenouras e abobrinha italiana) ao beurre blanc de limão cravo.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 68</span>
+<span class="text-xs font-mono text-tertiary">350g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Grilled white fish filet with sautéed seasonal vegetables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB95x8eiQwUJUA6Qsml4g2Gh1YazRXtDjvc-WYjeArqGd5Bzw727tMr_Qu06MR9LLk_YPQZn0cFQFZqPcyHTbSdKju4LXjfvr6oKw16UNZzPaP1jWJZsfTGhPJ_JbASj5IDXlB3mtXwzw9HGK-IJ6RmIZPMumBh8oE_j2voO8IIEvkQxpJ-BW3FmuvWxVWtk4nasIUatJmKHaiwxzRvFQXwEx_jTO-JcT6LHS7qBxAxLcMPUTldYnHn"/>
+</div>
+</article>
+<!-- Galletto Alla Griglia -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Galletto Alla Griglia</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Meio galeto desossado marinado em sálvia, alho e vinho branco, pele estaladiça, acompanhado de tagliolini fresco na manteiga e sálvia.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 62</span>
+<span class="text-xs font-mono text-tertiary">400g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Rustic grilled half chicken with fresh herbs and butter pasta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtRvVrBj3VbPJcfU7_Xi5zlQyzQqGxG8QxbsHwVWelJ79cgOAN6eohPutIUoBxLLH19TJFVepqse1m1Mi9FD0wdIJbKO7fGY-tof3ZvkgFBM-nHBRc1OumJ5iBioqoqSeTydc1ZCKNOAHtxvrfDz7Fk9bcfqMwy7FPGk5mdga4CxT8ql7wjbC745qP7VFaF4e1Qu3Xbm9TbdBqQ_kqqSrc7G8sVvKokgdMkK8VjM9JOJ7EY-JSsKnp"/>
+</div>
+</article>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- 5. À LA CARTE (CARNES & PEIXES NOBRES) -->
+<!-- ============================================== -->
+<section class="scroll-mt-36 space-y-4" id="a-la-carte">
+<div class="flex flex-col">
+<span class="text-[11px] font-bold uppercase tracking-widest text-primary">Carni &amp; Pesce</span>
+<h2 class="font-headline text-2xl text-on-surface font-bold">À La Carte Nobre</h2>
+<p class="text-xs text-on-surface-variant">Cortes nobres braseados lentamente e peixes frescos de pesca artesanal.</p>
+</div>
+<div class="grid grid-cols-1 gap-3.5">
+<!-- Bistecca alla Fiorentina -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-primary/20 flex flex-col gap-3">
+<div class="flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-surface-container-highest text-primary">Especialidade Toscana</span>
+</div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Bistecca alla Fiorentina</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                  Corte clássico T-Bone maturado por 35 dias, grelhado na brasa em ponto perfeito, sal Maldon e azeite extravirgem toscano aquecido com alecrim.
+                </p>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Classic Florentine T-Bone steak grilled on embers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkg_XX3YSiqfGnlBLKKiDdQyuiNfUCJMVyzng3GT0wi_aSGwrUVc7EqK9A20CWlbMbCF7trTr208l-z2_lIKquat9Mx6inAC0u63oqJhXarCw6iLX29nOQz-sLKMuxw9pKq_wBrKp-RSK3Vhh4s14vXgmUgPyKosHdgYcHKjHwMlVKf-_LHj0qhJCAc25r53xqPi0Q_OPVNqlcyx1zVbozWRzbwE-8A5yzBdgQJFr4U99cZHk8TYXC"/>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-surface-container-high/50 text-xs">
+<span class="text-xs text-tertiary">Acompanha batatas rústicas douradas</span>
+<div class="flex items-center gap-3">
+<span class="font-mono text-tertiary">650g</span>
+<span class="text-primary font-headline font-semibold text-lg">R$ 168</span>
+</div>
+</div>
+</article>
+<!-- Salmão em Crosta de Pistache -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Salmão em Crosta de Pistache de Bronte</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Lombo de salmão chileno assado em crosta de pistache crocante, servido sobre purê aveludado de mandioquinha e redução de tangerina.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 112</span>
+<span class="text-xs font-mono text-tertiary">380g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Pan-seared salmon with crunchy pistachio crust" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB95x8eiQwUJUA6Qsml4g2Gh1YazRXtDjvc-WYjeArqGd5Bzw727tMr_Qu06MR9LLk_YPQZn0cFQFZqPcyHTbSdKju4LXjfvr6oKw16UNZzPaP1jWJZsfTGhPJ_JbASj5IDXlB3mtXwzw9HGK-IJ6RmIZPMumBh8oE_j2voO8IIEvkQxpJ-BW3FmuvWxVWtk4nasIUatJmKHaiwxzRvFQXwEx_jTO-JcT6LHS7qBxAxLcMPUTldYnHn"/>
+</div>
+</article>
+<!-- Ossobuco Braseado -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Ossobuco Braseado ao Vinho Chianti</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Cozido lentamente por 8 horas até desmanchar no garfo, molho denso aromático com gremolata cítrica e polenta italiana cremosa.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 126</span>
+<span class="text-xs font-mono text-tertiary">520g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Slow braised ossobuco with red wine reduction and polenta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmCxgGOsrKKxD8tFKSP4WUtNjtFdjxiCp4K3LGf8L8j8WoU_U8DR18cTx-PQAQcXIKpxL3eaUo6I6eZNzXRtgluKL6r-wamZcG1vzfjsR_VAuXcMffFsG19ad5oJUYmYSP6Mm19IxQYrBf5ucIfDfrFZvuEQz77pzFZ0slZNV7BWESmQ_zfzq3BYR5qgnZ-npRiQ2-UCuDv8vIlwuuP_LkwySridqImov3Uc_z0n55DbdsCeBqvGVG"/>
+</div>
+</article>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- 6. RISOTOS -->
+<!-- ============================================== -->
+<section class="scroll-mt-36 space-y-4" id="risotos">
+<div class="flex flex-col">
+<span class="text-[11px] font-bold uppercase tracking-widest text-primary">Riso Carnaroli</span>
+<h2 class="font-headline text-2xl text-on-surface font-bold">Risotos Românticos</h2>
+<p class="text-xs text-on-surface-variant">Arroz Carnaroli legítimo mantecado ao ponto perfeito de veludo.</p>
+</div>
+<div class="grid grid-cols-1 gap-3.5">
+<!-- Risotto Funghi -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-secondary-container text-on-secondary-container">Vegetariano</span>
+</div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Risotto ai Funghi Porcini &amp; Trufas</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Cogumelos porcini italianos hidratados no próprio brodo, queijo taleggio, manteiga da montanha e gotas de azeite trufado aromático.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 89</span>
+<span class="text-xs font-mono text-tertiary">380g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Risotto with porcini mushrooms and truffle essence" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQEMn-5bwyD_rCvdPo0AIiPOSFEOKobkbApPLNwtdOaK5T7rRvsDsnM5Fv1_XBOdv5yTuIE1U-4RKbOlfbUnGg_4l1a5PvTRcWOVJ2ocjtNy64Xz7YL4EZx7VgsZlVFc6s-0JFLZnuTN5k-ifm6HK6dN29mD_lrJITJ4L4DYXoRv47-N-xKhU3MlHlzOLObL-gi3EHe-x2wqIrXzTMrpv-r_IjvLPcdSKofHVJg4YUd_mnzMJfabGR"/>
+</div>
+</article>
+<!-- Risotto de Camarões Rosa -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Risotto de Camarões Rosa &amp; Limão Siciliano</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Camarões rosa grandes salteados no vinho prosecco, perfume cítrico de raspas de limão siciliano e fonduta suave de mascarpone.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 118</span>
+<span class="text-xs font-mono text-tertiary">400g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Velvety risotto with sauteed jumbo shrimp and fresh lemon zest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7W2xSFI4XPR-mtxljrdumyw8arDcdLKxYft0LCf6y4o8b_6Qq3KlKj5BUMLH5jl34W4Lyrw1sXGOtXwmsSy1Lw_8IcI9lD0uwuYe_4-3TV3vVS8A7ye2GLGN-uVKAbIA8-L-pCyZLh1WfMiG0YepYHtmn0a9vrPWO7edcQZC87OoyZ2dmXOyuS4a69z8GnaET2bwxD5xqXxrtTWBmw7eMqS7XQe8BPp4Yq6vLQ03ROb8-ljwpOD81"/>
+</div>
+</article>
+<!-- Risotto Gorgonzola & Pêra -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-secondary-container text-on-secondary-container">Vegetariano</span>
+</div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Risotto Gorgonzola &amp; Pêra Caramelizada</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Equilíbrio doce e salgado entre queijo gorgonzola dolce DOP, lâminas douradas de pera william ao mel e crocante tostado de nozes.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 86</span>
+<span class="text-xs font-mono text-tertiary">370g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Risotto with gorgonzola cheese and caramelized pears" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLL1VKceKF8Fn-ozdVk4zN7aMXLwRMYrqF_nrTazh8ltJH6tYzbW5_PKYBpqkbnu1J9jzl1s_PbWEufvSqq4942DwLVD_JobWvmm9CfgIJBZH4Zo9ivVYbE0FfxKGeSFrpMExTFCBwETfpWknbfiSFDVolyn3gHQffbrlf2fTpUA--GRPnhg2b9aSj-_JAVq-JoBPFZQtPj299OzFNIGtS3_24hkZYUClu4JfekaJ664mV6v-7a0V9"/>
+</div>
+</article>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- 7. MASSAS FRESCAS ARTESANAIS -->
+<!-- ============================================== -->
+<section class="scroll-mt-36 space-y-4" id="massas">
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-bold uppercase tracking-widest text-primary">Pasta Fatta a Mano</span>
+<span class="text-[10px] text-tertiary uppercase font-mono tracking-wider">Abertas diariamente</span>
+</div>
+<h2 class="font-headline text-2xl text-on-surface font-bold">Massas Frescas</h2>
+<p class="text-xs text-on-surface-variant">Sêmola de grano duro e gemas caipiras frescas.</p>
+</div>
+<!-- Ravioli di Anatra Destaque -->
+<article class="rounded-2xl bg-surface-container-low border border-primary/30 p-4 shadow-xl overflow-hidden flex flex-col gap-3">
+<div class="relative w-full h-44 rounded-xl overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Handcrafted duck ravioli with citrus reduction and sage butter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtRvVrBj3VbPJcfU7_Xi5zlQyzQqGxG8QxbsHwVWelJ79cgOAN6eohPutIUoBxLLH19TJFVepqse1m1Mi9FD0wdIJbKO7fGY-tof3ZvkgFBM-nHBRc1OumJ5iBioqoqSeTydc1ZCKNOAHtxvrfDz7Fk9bcfqMwy7FPGk5mdga4CxT8ql7wjbC745qP7VFaF4e1Qu3Xbm9TbdBqQ_kqqSrc7G8sVvKokgdMkK8VjM9JOJ7EY-JSsKnp"/>
+<div class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/20">
+            Prato Assinatura Coroatto
+          </div>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-headline text-lg font-bold text-on-surface">Ravioli di Anatra con Arancia</h3>
+<span class="text-primary font-headline font-semibold text-xl">R$ 98</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+            Recheado com pato confitado desfiado lentamente, fonduta suave de queijo taleggio, redução acetinada de laranjas de Capri e manteiga de sálvia.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-surface-container-high/60 text-xs">
+<span class="text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">wine_bar</span> Rosso di Montalcino DOC
+          </span>
+<span class="font-mono text-tertiary">340g</span>
+</div>
+</article>
+<div class="grid grid-cols-1 gap-3.5">
+<!-- Gnocchi al Tartufo Nero -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Gnocchi al Tartufo Nero</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Gnocchi artesanal de batata baroa dourado, fonduta untuosa de parmesão Reggiano e lâminas de trufas negras de Úmbria.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 115</span>
+<span class="text-xs font-mono text-tertiary">350g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Handmade gnocchi in parmesan fonduta with fresh black truffle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOZqZetMRl5Y8tSxUr9jebsVp4W9C3C5Qbp30-Qr7FHUF1btDZptQQXnCgLWG8iAPbylwmQIkpmhdNCdIH_TT93Kb9BjAOVE_1pgOuQ5Xa0usdNEZmRQjmuvtSgOxXFx4900gfgqycUZ4gEyG3wKwMeWJDyO7HQ2irtSSJPvdUbDdotTAT0yu8jfroOsGXNcFMd0fgb1X-2g7P4CdPfoN9B-8nUmIf22mnfb12pNjY4zKRLg4D8Mjo"/>
+</div>
+</article>
+<!-- Pappardelle com Ragù -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Pappardelle al Ragù di Costola</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Fitas largas de pappardelle al dente, ragù encorpado de costela bovina marinada no vinho tinto toscano por 24 horas e tomilho fresco.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 92</span>
+<span class="text-xs font-mono text-tertiary">420g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Pappardelle ribbons tangled in rich dark beef ragu" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4R8luPj9tZ-5PtMnT76j1shLvuCcy8tfj3l0ph9ZsdL8qZAB2b-JVUPRaCtW3-37yzxqtSXvfJ_6fzr3cV3NdbysM1eA_yLDlqX3A1ytkCxUtT-7pjbnbxkh8ywlmRh4-72g9fMpx8b0wnDtiNmjLOmc4p34wTgsU9wOZ1JvLaIf5ZCCR2HnwS0L6bqpGlZzBT9zBmfnggKf282jEOErn38ew9u0SVxPWXtAoMpAaRr9k2hAvYEz1"/>
+</div>
+</article>
+<!-- Tagliolini ai Frutti di Mare -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Tagliolini ai Frutti di Mare</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Massa fina salteada com camarões-pistola, lulas tenras, mexilhões frescos na concha, vinho branco seco e raspas de limão siciliano.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 128</span>
+<span class="text-xs font-mono text-tertiary">410g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Fine seafood tagliolini with king prawns and calamari" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB95x8eiQwUJUA6Qsml4g2Gh1YazRXtDjvc-WYjeArqGd5Bzw727tMr_Qu06MR9LLk_YPQZn0cFQFZqPcyHTbSdKju4LXjfvr6oKw16UNZzPaP1jWJZsfTGhPJ_JbASj5IDXlB3mtXwzw9HGK-IJ6RmIZPMumBh8oE_j2voO8IIEvkQxpJ-BW3FmuvWxVWtk4nasIUatJmKHaiwxzRvFQXwEx_jTO-JcT6LHS7qBxAxLcMPUTldYnHn"/>
+</div>
+</article>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- 8. PORÇÕES (COMPARTILHAR) -->
+<!-- ============================================== -->
+<section class="scroll-mt-36 space-y-4" id="porcoes">
+<div class="flex flex-col">
+<span class="text-[11px] font-bold uppercase tracking-widest text-primary">Da Condividere</span>
+<h2 class="font-headline text-2xl text-on-surface font-bold">Porções &amp; Petiscos</h2>
+<p class="text-xs text-on-surface-variant">Pratos desenhados para beliscar e harmonizar à mesa.</p>
+</div>
+<div class="grid grid-cols-1 gap-3.5">
+<!-- Arancini Clássico -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Arancini Clássico Siciliano</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Bolinhos dourados e crocantes de risoto de açafrão, recheados com coração derretido de mussarela di búfala. Servido com aioli de tomate seco.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 48</span>
+<span class="text-xs font-mono text-tertiary">300g (6 unidades)</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Crispy golden Italian arancini balls with melted cheese filling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASg5SnZCo3chsW-2KBIo1u8-VO8YLql-ulrbhCMpsTsrF7YwpieBFY-qPi36X4HCc1JmMVZetSpPp8YgFrgjJHnUhnjwr8TujNwZPenNkvFvBqiimWcGhuP1tosPvVvxIo76c4zFsScfEoyiBZuH1WJxVLos4Sdv3J0WpYCw-sllj5-hjv8yZfRIVcyJdcIU_Z7QxDHrVm-saLRQXe15DqljKuhiwAx0LoicNyxgFAlP8qWB9LeXoe"/>
+</div>
+</article>
+<!-- Polenta Frita Crocante -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Polenta Frita Crocante &amp; Aioli</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Bastões de polenta de moenda de pedra, crocantes por fora e aveludados por dentro, salpicados com flor de sal e aioli artesanal de ervas.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 39</span>
+<span class="text-xs font-mono text-tertiary">350g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Crisp golden polenta fries with fresh herbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmCxgGOsrKKxD8tFKSP4WUtNjtFdjxiCp4K3LGf8L8j8WoU_U8DR18cTx-PQAQcXIKpxL3eaUo6I6eZNzXRtgluKL6r-wamZcG1vzfjsR_VAuXcMffFsG19ad5oJUYmYSP6Mm19IxQYrBf5ucIfDfrFZvuEQz77pzFZ0slZNV7BWESmQ_zfzq3BYR5qgnZ-npRiQ2-UCuDv8vIlwuuP_LkwySridqImov3Uc_z0n55DbdsCeBqvGVG"/>
+</div>
+</article>
+<!-- Tábua de Queijos e Embutidos -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Tábua di Salumi &amp; Formaggi</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Prosciutto di Parma 18 meses, salame milano, queijo gorgonzola dolce, pecorino toscano, favo de mel silvestre, azeitonas marinadas e pães da casa.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 96</span>
+<span class="text-xs font-mono text-tertiary">450g para compartilhar</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Artisanal charcuterie and cheese board with prosciutto and pecorino" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkg_XX3YSiqfGnlBLKKiDdQyuiNfUCJMVyzng3GT0wi_aSGwrUVc7EqK9A20CWlbMbCF7trTr208l-z2_lIKquat9Mx6inAC0u63oqJhXarCw6iLX29nOQz-sLKMuxw9pKq_wBrKp-RSK3Vhh4s14vXgmUgPyKosHdgYcHKjHwMlVKf-_LHj0qhJCAc25r53xqPi0Q_OPVNqlcyx1zVbozWRzbwE-8A5yzBdgQJFr4U99cZHk8TYXC"/>
+</div>
+</article>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- 9. SOBREMESAS -->
+<!-- ============================================== -->
+<section class="scroll-mt-36 space-y-4" id="sobremesas">
+<div class="flex flex-col">
+<span class="text-[11px] font-bold uppercase tracking-widest text-primary">Dolci Momenti</span>
+<h2 class="font-headline text-2xl text-on-surface font-bold">Sobremesas Artesanais</h2>
+<p class="text-xs text-on-surface-variant">O doce encerramento da tradição italiana.</p>
+</div>
+<div class="grid grid-cols-1 gap-3.5">
+<!-- Tiramisù -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-surface-container-highest text-primary">Receita Original</span>
+</div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Tiramisù Tradizionale</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Biscoitos savoiardi embebidos em café espresso illy e vinho Marsala, entremeados por creme leve de mascarpone fresco e cacau 70% belga.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 38</span>
+<span class="text-xs font-mono text-tertiary">180g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Traditional Italian tiramisu dusted with fine cocoa powder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtRvVrBj3VbPJcfU7_Xi5zlQyzQqGxG8QxbsHwVWelJ79cgOAN6eohPutIUoBxLLH19TJFVepqse1m1Mi9FD0wdIJbKO7fGY-tof3ZvkgFBM-nHBRc1OumJ5iBioqoqSeTydc1ZCKNOAHtxvrfDz7Fk9bcfqMwy7FPGk5mdga4CxT8ql7wjbC745qP7VFaF4e1Qu3Xbm9TbdBqQ_kqqSrc7G8sVvKokgdMkK8VjM9JOJ7EY-JSsKnp"/>
+</div>
+</article>
+<!-- Panna Cotta -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Panna Cotta ai Frutti di Bosco</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Creme de leite fresco infusionado com favas de baunilha de Madagascar, coberto com coulis brilhante de frutas vermelhas colhidas frescas.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 36</span>
+<span class="text-xs font-mono text-tertiary">190g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Vanilla bean panna cotta topped with berries compote" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASg5SnZCo3chsW-2KBIo1u8-VO8YLql-ulrbhCMpsTsrF7YwpieBFY-qPi36X4HCc1JmMVZetSpPp8YgFrgjJHnUhnjwr8TujNwZPenNkvFvBqiimWcGhuP1tosPvVvxIo76c4zFsScfEoyiBZuH1WJxVLos4Sdv3J0WpYCw-sllj5-hjv8yZfRIVcyJdcIU_Z7QxDHrVm-saLRQXe15DqljKuhiwAx0LoicNyxgFAlP8qWB9LeXoe"/>
+</div>
+</article>
+<!-- Torta Caprese -->
+<article class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex gap-4">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-surface-container-highest text-tertiary">Sem Glúten</span>
+</div>
+<h3 class="font-headline text-base font-semibold text-on-surface">Torta Caprese di Cioccolato</h3>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                Clássico bolo napolitano à base de chocolate amargo belga e farinha de amêndoas tostadas. Servido morno com gelato artesanal de fior di latte.
+              </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/40">
+<span class="text-primary font-headline font-semibold text-lg">R$ 42</span>
+<span class="text-xs font-mono text-tertiary">200g</span>
+</div>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Flourless chocolate almond cake with fior di latte gelato" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOZqZetMRl5Y8tSxUr9jebsVp4W9C3C5Qbp30-Qr7FHUF1btDZptQQXnCgLWG8iAPbylwmQIkpmhdNCdIH_TT93Kb9BjAOVE_1pgOuQ5Xa0usdNEZmRQjmuvtSgOxXFx4900gfgqycUZ4gEyG3wKwMeWJDyO7HQ2irtSSJPvdUbDdotTAT0yu8jfroOsGXNcFMd0fgb1X-2g7P4CdPfoN9B-8nUmIf22mnfb12pNjY4zKRLg4D8Mjo"/>
+</div>
+</article>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- 10. DRINKS & COQUETELARIA -->
+<!-- ============================================== -->
+<section class="scroll-mt-36 space-y-4" id="drinks">
+<div class="flex flex-col">
+<span class="text-[11px] font-bold uppercase tracking-widest text-primary">Aperitivi &amp; Cocktails</span>
+<h2 class="font-headline text-2xl text-on-surface font-bold">Coquetelaria de Autor</h2>
+<p class="text-xs text-on-surface-variant">Receitas autorais e clássicos italianos atemporais.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+<!-- Coroatto Royale -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-primary/20 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-headline text-base font-semibold text-primary">Coroatto Royale</h3>
+<span class="font-headline font-semibold text-on-surface text-base">R$ 46</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1.5 leading-relaxed">
+              Gin London Dry, licor de sabugueiro St. Germain, redução de amora silvestre, finalizado com espumante Prosecco Brut e fumo de alecrim.
+            </p>
+</div>
+<div class="mt-3 pt-2 border-t border-surface-container-high/40 text-[11px] text-tertiary">
+            Taça Coupe • 180ml
+          </div>
+</div>
+<!-- Negroni Clássico -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-headline text-base font-semibold text-on-surface">Negroni Invecchiato</h3>
+<span class="font-headline font-semibold text-on-surface text-base">R$ 44</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1.5 leading-relaxed">
+              Gin botânico artesanal, Campari e Vermouth rosso envelhecido em barril de carvalho no próprio bar do restaurante, fatia de laranja desidratada.
+            </p>
+</div>
+<div class="mt-3 pt-2 border-t border-surface-container-high/40 text-[11px] text-tertiary">
+            Copo Baixo Old Fashioned • Gelo Translúcido
+          </div>
+</div>
+<!-- Aperol Spritz -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-headline text-base font-semibold text-on-surface">Aperol Spritz Veneziano</h3>
+<span class="font-headline font-semibold text-on-surface text-base">R$ 42</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1.5 leading-relaxed">
+              O autêntico aperitivo do Vêneto: Aperol, Prosecco Superiore DOC, água com gás San Pellegrino e rodela de laranja bahia fresca.
+            </p>
+</div>
+<div class="mt-3 pt-2 border-t border-surface-container-high/40 text-[11px] text-tertiary">
+            Taça Balon • 250ml
+          </div>
+</div>
+<!-- Amore Nero -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-headline text-base font-semibold text-on-surface">Amore Nero (Bourbon &amp; Café)</h3>
+<span class="font-headline font-semibold text-on-surface text-base">R$ 48</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1.5 leading-relaxed">
+              Bourbon infusionado com cacau toscano, licor de café illy, xarope de baunilha orgânica e toque de bitters aromáticos de noz-moscada.
+            </p>
+</div>
+<div class="mt-3 pt-2 border-t border-surface-container-high/40 text-[11px] text-tertiary">
+            Servido sobre pedra lapidada • 160ml
+          </div>
+</div>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- 11. CARTA DE VINHOS -->
+<!-- ============================================== -->
+<section class="scroll-mt-36 space-y-4" id="vinhos">
+<div class="flex flex-col">
+<span class="text-[11px] font-bold uppercase tracking-widest text-primary">Cantina di Selezione</span>
+<h2 class="font-headline text-2xl text-on-surface font-bold">Carta de Vinhos</h2>
+<p class="text-xs text-on-surface-variant">Rótulos premiados com curadoria de nosso Sommelier.</p>
+</div>
+<div class="space-y-3">
+<!-- Vinhos Tintos -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high">
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2.5 h-2.5 rounded-full bg-red-700"></span>
+<h3 class="font-headline text-base font-semibold text-on-surface">Tintos Selecionados</h3>
+</div>
+<div class="divide-y divide-surface-container-high/60 text-xs">
+<div class="py-2.5 flex items-center justify-between">
+<div>
+<strong class="text-on-surface block font-medium">Chianti Classico DOCG • San Fabiano</strong>
+<span class="text-on-surface-variant">Toscana, Itália • Uva Sangiovese (750ml)</span>
+</div>
+<span class="text-primary font-semibold font-mono text-sm ml-2">R$ 210</span>
+</div>
+<div class="py-2.5 flex items-center justify-between">
+<div>
+<strong class="text-on-surface block font-medium">Barolo Tradizionale DOCG • Marchesi di Barolo</strong>
+<span class="text-on-surface-variant">Piemonte, Itália • Uva Nebbiolo (750ml)</span>
+</div>
+<span class="text-primary font-semibold font-mono text-sm ml-2">R$ 580</span>
+</div>
+<div class="py-2.5 flex items-center justify-between">
+<div>
+<strong class="text-on-surface block font-medium">Brunello di Montalcino DOCG • Banfi</strong>
+<span class="text-on-surface-variant">Toscana, Itália • Uva Sangiovese Grosso (750ml)</span>
+</div>
+<span class="text-primary font-semibold font-mono text-sm ml-2">R$ 690</span>
+</div>
+</div>
+</div>
+<!-- Brancos e Espumantes -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high">
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-300"></span>
+<h3 class="font-headline text-base font-semibold text-on-surface">Brancos &amp; Espumantes</h3>
+</div>
+<div class="divide-y divide-surface-container-high/60 text-xs">
+<div class="py-2.5 flex items-center justify-between">
+<div>
+<strong class="text-on-surface block font-medium">Gavi di Gavi DOCG • Villa Sparina</strong>
+<span class="text-on-surface-variant">Piemonte, Itália • Uva Cortese (750ml)</span>
+</div>
+<span class="text-primary font-semibold font-mono text-sm ml-2">R$ 240</span>
+</div>
+<div class="py-2.5 flex items-center justify-between">
+<div>
+<strong class="text-on-surface block font-medium">Pinot Grigio delle Venezie DOC</strong>
+<span class="text-on-surface-variant">Vêneto, Itália (Taça 150ml / Garrafa 750ml)</span>
+</div>
+<span class="text-primary font-semibold font-mono text-sm ml-2">R$ 46 / R$ 180</span>
+</div>
+<div class="py-2.5 flex items-center justify-between">
+<div>
+<strong class="text-on-surface block font-medium">Franciacorta Brut DOCG • Bellavista Alma</strong>
+<span class="text-on-surface-variant">Lombardia, Itália • Método Champenoise (750ml)</span>
+</div>
+<span class="text-primary font-semibold font-mono text-sm ml-2">R$ 490</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- 12. BEBIDAS GERAIS & CAFÉS -->
+<!-- ============================================== -->
+<section class="scroll-mt-36 space-y-4" id="bebidas">
+<div class="flex flex-col">
+<span class="text-[11px] font-bold uppercase tracking-widest text-primary">Bevande &amp; Caffetteria</span>
+<h2 class="font-headline text-2xl text-on-surface font-bold">Bebidas &amp; Cafés</h2>
+<p class="text-xs text-on-surface-variant">Águas minerais italianas, cervejas especiais e espresso illy.</p>
+</div>
+<div class="rounded-xl bg-surface-container-low border border-surface-container-high p-4 space-y-3 text-xs">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container-high/40">
+<div>
+<span class="font-medium text-on-surface block">Água San Pellegrino com Gás (505ml)</span>
+<span class="text-on-surface-variant">Importada da Itália</span>
+</div>
+<span class="text-primary font-mono font-semibold">R$ 19</span>
+</div>
+<div class="flex items-center justify-between pb-2 border-b border-surface-container-high/40">
+<div>
+<span class="font-medium text-on-surface block">Água Acqua Panna sem Gás (505ml)</span>
+<span class="text-on-surface-variant">Direto da fonte toscana</span>
+</div>
+<span class="text-primary font-mono font-semibold">R$ 19</span>
+</div>
+<div class="flex items-center justify-between pb-2 border-b border-surface-container-high/40">
+<div>
+<span class="font-medium text-on-surface block">Sucos Naturais Prensados a Frio (300ml)</span>
+<span class="text-on-surface-variant">Laranja pera, Uva integral com mirtilo ou Limonada Siciliana</span>
+</div>
+<span class="text-primary font-mono font-semibold">R$ 16</span>
+</div>
+<div class="flex items-center justify-between pb-2 border-b border-surface-container-high/40">
+<div>
+<span class="font-medium text-on-surface block">Refrigerantes em Garrafa de Vidro (290ml)</span>
+<span class="text-on-surface-variant">Coca-Cola (Original / Zero), Guaraná Antarctica</span>
+</div>
+<span class="text-primary font-mono font-semibold">R$ 12</span>
+</div>
+<div class="flex items-center justify-between pb-2 border-b border-surface-container-high/40">
+<div>
+<span class="font-medium text-on-surface block">Cerveja Artesanal Menabrea Bionda (330ml)</span>
+<span class="text-on-surface-variant">Premium Lager italiana de Biella</span>
+</div>
+<span class="text-primary font-mono font-semibold">R$ 26</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="font-medium text-on-surface block">Café Espresso illy &amp; Petit Four</span>
+<span class="text-on-surface-variant">100% Arábica selecionado, servido com cantucci caseiro</span>
+</div>
+<span class="text-primary font-mono font-semibold">R$ 14</span>
+</div>
+</div>
+</section>
+<!-- Footer Informative Disclaimer -->
+<footer class="pt-6 pb-8 border-t border-surface-container-highest/60 text-center space-y-2">
+<div class="w-8 h-8 mx-auto rounded-full bg-surface-container flex items-center justify-center p-1 border border-primary/20">
+<img alt="Coroatto Gastronomia" class="h-full w-full object-contain filter invert opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI5CJFS26gUmVv5aAILXQHBD4oc6h7-2AZJsDJowaku_06szca9SWoJrkuvKWPENCAu1ftzRTKN_8ch8OSaQO3MmCTEO1tT-uyf2kXK47JhPZv8ESixeDvrZu9uub_yspoPi3UWgImuz3_mymu9UMSFAuMaZtP1q_r0j_RVwwdZvmz0GfPkWddzlnhdlYotxl3MkJa0knMEdlhNnzPxAovP9IRfihIWcPcwg1Q5hTITY-_1BWYzyk50V-9hM5ZemKjfg"/>
+</div>
+<p class="font-headline text-sm font-semibold text-primary">Coroatto Gastronomia Italiana</p>
+<p class="text-[11px] text-tertiary max-w-sm mx-auto leading-relaxed">
+        Cardápio digital 100% informativo para visualização na mesa via QR Code. Em caso de restrições ou alergias alimentares severas, por favor comunique a um membro da equipe.
+      </p>
+<p class="text-[10px] text-on-surface-variant/60 font-mono pt-2">
+        Preços expressos em Reais (BRL) • Válidos para o ano corrente
+      </p>
+</footer>
+</main>
+<!-- Clean Bottom Navigation: Fast Category Shortcuts (No Cart, No Waiter, No Bill) -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl border-t border-surface-container-highest/60 shadow-[0_-8px_24px_rgba(0,0,0,0.7)]">
+<div class="flex justify-around items-center h-14 max-w-md mx-auto px-4">
+<a class="flex flex-col items-center justify-center gap-0.5 text-on-surface-variant hover:text-primary transition-colors" href="#menu-almoco">
+<span class="material-symbols-outlined text-[20px]">lunch_dining</span>
+<span class="text-[10px] font-semibold tracking-wider uppercase">Almoço</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 text-on-surface-variant hover:text-primary transition-colors" href="#entradas">
+<span class="material-symbols-outlined text-[20px]">tapas</span>
+<span class="text-[10px] font-semibold tracking-wider uppercase">Entradas</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 text-on-surface-variant hover:text-primary transition-colors" href="#massas">
+<span class="material-symbols-outlined text-[20px]">dinner_dining</span>
+<span class="text-[10px] font-semibold tracking-wider uppercase">Pratos</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 text-on-surface-variant hover:text-primary transition-colors" href="#vinhos">
+<span class="material-symbols-outlined text-[20px]">wine_bar</span>
+<span class="text-[10px] font-semibold tracking-wider uppercase">Vinhos</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 text-on-surface-variant hover:text-primary transition-colors" href="#bebidas">
+<span class="material-symbols-outlined text-[20px]">local_cafe</span>
+<span class="text-[10px] font-semibold tracking-wider uppercase">Bebidas</span>
+</a>
+</div>
+</nav>
+<!-- Interactive script to highlight categories on pill click -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const pills = document.querySelectorAll('.category-pill');
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pills.forEach(p => {
+            p.classList.remove('bg-primary', 'text-on-primary');
+            p.classList.add('bg-surface-container', 'text-on-surface-variant');
+          });
+          pill.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          pill.classList.add('bg-primary', 'text-on-primary');
+        });
+      });
+    });
+  </script>
+</body></html>
